@@ -62,7 +62,7 @@ body {
   background-color: black;
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between; /* left text, right icons */
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap; /* wrap on small screens */
   color: beige;
@@ -145,11 +145,11 @@ h2:hover {
 /* Paragraphs */
 p {
     text-align: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Easy-to-read body font */
-  font-size: 1rem;      /* Comfortable reading size */
-  line-height: 1.6;     /* Space between lines for readability */
-  margin-bottom: 1rem;  /* Space below paragraphs */
-  margin: 20px 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1rem;     
+  line-height: 1.6;    
+  margin: 30px 30px;
+  text-align: center;
   border-style: inset;
   border-width: 10px;
   border-color: #00c2ff;
@@ -161,7 +161,7 @@ ul {
   font-size: 1rem;
   line-height: 1.6;
   color: black;
-  padding-left: 1.5rem;   /* Indent bullets for structure */
+  padding-left: 1.5rem;  
   display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-lg);
@@ -210,7 +210,6 @@ li:hover {
 section {
   padding: 4rem 2rem;
   max-width: 900px;
-  margin: 0 auto;
 }
 
 
@@ -225,7 +224,7 @@ hr {
     transparent
   );
   border: 0;
-  animation: pulse 1s infinite ease-in-out;
+  animation: pulse 3s infinite ease-in-out;
   display: block;
   flex: 0 0 auto;
 }
@@ -245,18 +244,19 @@ hr {
   background-color: beige;
   border-radius: 16px;
   z-index: 0;
-  overflow: visible; /* allow pseudo-elements to extend beyond content */
+  overflow: visible; 
 }
 
-/* animated glowing border */
+
 .outlined-section::before {
   content: "";
   position: absolute;
-  top: -6px;      /* push border outside content */
+  top: -6px;     
   left: -6px;
   right: -6px;
   bottom: -6px;
   border-radius: 22px;
+ 
 
   background: conic-gradient(
     from 0deg,
@@ -271,10 +271,10 @@ hr {
   animation: spin-border .5s linear infinite;
   filter: drop-shadow(0 0 12px rgba(0, 194, 255, 0.85));
 
-  z-index: -2; /* behind content */
+  z-index: -2;
 }
 
-/* mask center so border appears only around edge */
+
 .outlined-section::after {
   content: "";
   position: absolute;
@@ -285,4 +285,16 @@ hr {
   background-color: beige;
   border-radius: 16px;
   z-index: -1;
+}
+
+.back-to-top {
+  text-decoration: none;
+  color: #00c2ff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.back-to-top:hover {
+  color: black;
 }
