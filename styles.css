@@ -1,0 +1,288 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: beige;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+
+}
+
+/* Global fix for padding causing scroll */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* NAVBAR CONTAINER */
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  z-index: 1000;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* NAV LINKS */
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* TEXT COLOR ON HOVER */
+.main-nav a:hover {
+  color: #00c2ff;
+}
+
+
+
+/* Footer container */
+.main-footer {
+  width: 100%;
+  max-width: 100vw;
+  background-color: black;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between; /* left text, right icons */
+  align-items: center;
+  flex-wrap: wrap; /* wrap on small screens */
+  color: beige;
+  margin-top: auto;
+    
+}
+
+/* Flex row for items */
+.inline-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Left / Right specific */
+.footer-left {
+  justify-content: flex-start;
+}
+
+.footer-right {
+    max-width: 100%;
+  justify-content: flex-end;
+  flex-wrap: wrap; /* wrap icons if screen is small */
+}
+
+.main-footer p {
+  margin: 0;
+}
+
+/* SVG links styling */
+.footer-links a {
+  color: beige;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00c2ff; /* hover color */
+}
+
+/* SVGs inherit the link color */
+.footer-links svg {
+  stroke: currentColor;
+  fill: currentColor;
+  transition: stroke 0.3s ease, fill 0.3s ease;
+  max-width: 24px;
+  max-height: 24px;
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+  color: #00c2ff;  
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-size: 2rem;     
+  font-weight: 600;    
+  margin-bottom: 1rem;  
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 20px 20px;
+  box-shadow: 0 10px 20px black;
+  border-radius: 10px;
+  border-color: black;
+  border-width: 30px;
+  background-color: black;
+  
+
+}
+
+h2:hover {
+    transition: color 0.3s ease;
+    color: black;
+    background-color: #00c2ff;
+}
+
+/* Paragraphs */
+p {
+    text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Easy-to-read body font */
+  font-size: 1rem;      /* Comfortable reading size */
+  line-height: 1.6;     /* Space between lines for readability */
+  margin-bottom: 1rem;  /* Space below paragraphs */
+  margin: 20px 20px;
+  border-style: inset;
+  border-width: 10px;
+  border-color: #00c2ff;
+}
+
+/* Lists inside sections */
+ul {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: black;
+  padding-left: 1.5rem;   /* Indent bullets for structure */
+  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 20px black;
+    border-color: black;
+    border-style:groove;
+    margin: 10px 10px;
+    background-color: black;
+    
+
+}
+
+li {
+    border-radius: 1%; display: block; object-fit: cover; border: 20px solid #00c2ff; 
+    animation: float 6s ease-in-out infinite;
+    margin: 30px 30px;
+    border-style:inherit;
+    padding: 20px;
+    background-color: beige;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+li:hover {
+    transition: color 0.3s ease;
+    color: beige;
+    background-color: #00c2ff;
+}
+
+.profile-photo { 
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; display: block; object-fit: cover; border: 2px solid #00c2ff; 
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+section {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+hr {
+  height: 10px;
+  width: 100%;
+  margin: 4rem auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00c2ff,
+    transparent
+  );
+  border: 0;
+  animation: pulse 1s infinite ease-in-out;
+  display: block;
+  flex: 0 0 auto;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+.outlined-section {
+  position: relative;
+  padding: 3rem 2rem;
+  margin: 4rem auto;
+  max-width: 900px;
+
+  background-color: beige;
+  border-radius: 16px;
+  z-index: 0;
+  overflow: visible; /* allow pseudo-elements to extend beyond content */
+}
+
+/* animated glowing border */
+.outlined-section::before {
+  content: "";
+  position: absolute;
+  top: -6px;      /* push border outside content */
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 22px;
+
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    #00c2ff 90deg,
+    transparent 180deg,
+    #00c2ff 270deg,
+    transparent 360deg
+    
+  );
+
+  animation: spin-border .5s linear infinite;
+  filter: drop-shadow(0 0 12px rgba(0, 194, 255, 0.85));
+
+  z-index: -2; /* behind content */
+}
+
+/* mask center so border appears only around edge */
+.outlined-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: beige;
+  border-radius: 16px;
+  z-index: -1;
+}
