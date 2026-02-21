@@ -298,3 +298,12 @@ hr {
 .back-to-top:hover {
   color: black;
 }
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: beige;
+  transition: color 0.3s ease;
+}
